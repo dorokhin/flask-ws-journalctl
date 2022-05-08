@@ -1,7 +1,23 @@
-# ws-journalctl
+# flask-ws-journalctl
 
 
-Sample WebSocket application which send `journalctl -u unit.name -f` data to browser.
+Simple Flask WebSocket application which sends `journalctl -u unit.name -f` data to browser in realtime.
+
+### Run:
 
 
-![Screenshot from 2022-05-07 23-26-53](https://user-images.githubusercontent.com/10822884/167270732-96e39845-c0af-4c0d-83ff-f8c74e10cb7a.png)
+to run only on localhost:
+```console
+~$ pip install -r requirements.txt
+~$ gunicorn --bind 127.0.0.1:5000 --workers 3 app:app # 
+```
+Or run on external ip
+
+Edit `'ws_url': 'ws://127.0.0.1:5000/log'` line in `app.py`, set your ip address.
+```console
+~$ gunicorn --bind 0.0.0.0:5000 --workers 3 app:app
+```
+
+
+
+![image](https://user-images.githubusercontent.com/10822884/167296254-06e2f71e-aaff-407a-98bb-d6da4eb8f020.png)
