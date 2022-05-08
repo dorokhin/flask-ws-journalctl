@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 sock = Sock(app)
-app.config['SOCK_SERVER_OPTIONS'] = {'ping_interval': 25}
+app.config['SOCK_SERVER_OPTIONS'] = {'ping_interval': 5}
 
 
 @app.route('/')
@@ -56,4 +56,7 @@ def log(ws):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.config.update(
+        DEBUG=True,
+    )
+    app.run(host="0.0.0.0", port=5000)
