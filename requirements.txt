@@ -7,5 +7,5 @@ itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.1
 simple-websocket==0.5.2
-Werkzeug==2.1.2
+Werkzeug==2.2.3
 wsproto==1.1.0
